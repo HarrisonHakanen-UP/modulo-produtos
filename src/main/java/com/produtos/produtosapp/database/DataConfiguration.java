@@ -18,8 +18,8 @@ public class DataConfiguration {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/produtosapp");
-        dataSource.setUsername("");
-        dataSource.setPassword("");
+        dataSource.setUsername("ariane");
+        dataSource.setPassword("281298");
         return dataSource;
     }
 	

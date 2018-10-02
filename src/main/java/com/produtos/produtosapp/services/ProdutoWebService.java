@@ -65,7 +65,6 @@ public class ProdutoWebService {
 	@PutMapping
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public void updateProd(@PathVariable("id") long id, @RequestBody Produto produto) {
-        produto = pr.findOne(id);
         Produto prod = new Produto();
         pr.save(prod);
 	}

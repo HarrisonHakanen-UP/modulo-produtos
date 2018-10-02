@@ -39,26 +39,7 @@ public class ProdutosappApplicationTests {
 	
 	@Autowired
 	private ProdutoRepository ProdutoRepositorio;
-	@Autowired
-	private FotoRepository FotosRepositorio;
-	@Autowired
-	private UnidadeMedidaRepository UnidadeMedidaRepositorio;
-	@Autowired
-	private RevisaoRepository RevisaoRepositorio;
-	@Autowired
-	private ProdutoCategoriaRepository ProdutoCategoriaRepositorio;
-	@Autowired
-	private ProdutoSubCategoriaRepository ProdutoSubCategoriaRepositorio;
-	@Autowired
-	private ModeloRepository ModeloRepositorio;
-	@Autowired
-	private IlustracaoRepository IlustracaoRepositorio;
-	@Autowired
-	private DocumentoRepository DocumentosRepositorio;
-	@Autowired
-	private DescricaoRepository DescricaoRepositorio;
-	@Autowired
-	private CulturaRepository CulturaRepositorio;
+
 	
 	
 
@@ -67,19 +48,11 @@ public class ProdutosappApplicationTests {
 		
 
 		Produto produto = new Produto();
-		Fotos fotos = new Fotos(0, null, null, null, null, false, null, produto);
-		UnidadeMedida unidadeMedida = new UnidadeMedida(0, null, null, produto);
-		Revisao revisao = new Revisao(0, null, null, null, null, null, produto);
-		ProdutoSubCategoria produtoSubCategoria = new ProdutoSubCategoria(0, null, null, null, produto);
-		ProdutoCategoria produtoCategoria = new ProdutoCategoria(0, null, null);
-		Ilustracao ilustracao = new Ilustracao(0, null, null);
-		Descricao descricao = new Descricao();
-		Cultura cultura = new Cultura();
-		Documento documentos = new Documento();
-		Modelo modelo = new Modelo();
+
 		Date data = new Date(System.currentTimeMillis());
 
 		// criar
+		produto.setProdutoId(2);
 		produto.setNome("M");
 		produto.setNumeroProduto("8");
 	/*	produto.setBandeira(true);
@@ -90,8 +63,8 @@ public class ProdutosappApplicationTests {
 		produto.setCustoPadrao(5);
 		produto.setPrecoVenda(5);
 		produto.setTamanhoProduto("2");
-		produto.setUnidadeMedidaTamanho("");
-		produto.setUnidadeMedidaPeso("");
+		produto.setUnidadeMedidaTamanho("teste");
+		produto.setUnidadeMedidaPeso("teste");
 		produto.setPesoProduto(2);
 		produto.setDiasParaFabricarProduto(1);
 		produto.setLinhaDoProduto("M");
@@ -103,7 +76,7 @@ public class ProdutosappApplicationTests {
 		produto.setDataModificacao(data);
 		
 		
-		fotos.setDataModificacao(data);
+/*		fotos.setDataModificacao(data);
 		fotos.setImagemGrande("http://jbwefhebubewvb");
 		fotos.setImagemPequena("http://jbshkdbhdbwed");
 		fotos.setNomeImagemGrande("bike");
@@ -180,7 +153,7 @@ public class ProdutosappApplicationTests {
 		IlustracaoRepositorio.save(ilustracao);
 		ModeloRepositorio.save(modelo);		
 		
-		
+		*/
 		String teste = produto.getNome();
 		
 		
