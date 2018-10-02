@@ -12,13 +12,12 @@ import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 
 
 @EnableRabbit
 @SpringBootApplication
-@EnableEurekaClient
+//@EnableEurekaClient
 public class Application {
 
 	static final String topicExchangeName = "spring-boot-exchange";
