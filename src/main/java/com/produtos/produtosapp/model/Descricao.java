@@ -62,18 +62,61 @@ public class Descricao implements Serializable {
 		return serialVersionUID;
 	}
 
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Descricao == null) ? 0 : Descricao.hashCode());
+		result = prime * result + (int) (DescricaoProdutoId ^ (DescricaoProdutoId >>> 32));
+		result = prime * result + ((dataCadastro == null) ? 0 : dataCadastro.hashCode());
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Descricao other = (Descricao) obj;
+		if (Descricao == null) {
+			if (other.Descricao != null)
+				return false;
+		} else if (!Descricao.equals(other.Descricao))
+			return false;
+		if (DescricaoProdutoId != other.DescricaoProdutoId)
+			return false;
+		if (dataCadastro == null) {
+			if (other.dataCadastro != null)
+				return false;
+		} else if (!dataCadastro.equals(other.dataCadastro))
+			return false;
+		return true;
+	}
+
+
+
 	public Descricao(long descricaoProdutoId, String descricao, Date dataCadastro) {
 		super();
-		this.DescricaoProdutoId = descricaoProdutoId;
-		this.Descricao = descricao;
+		DescricaoProdutoId = descricaoProdutoId;
+		Descricao = descricao;
 		this.dataCadastro = dataCadastro;
 	}
+
+
 
 	@Override
 	public String toString() {
 		return "Descricao [DescricaoProdutoId=" + DescricaoProdutoId + ", Descricao=" + Descricao + ", dataCadastro="
 				+ dataCadastro + "]";
 	}
+
 	
 
 }

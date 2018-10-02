@@ -1,36 +1,33 @@
 package com.produtos.produtosapp;
 
-import org.hibernate.HibernateException;
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
+
 import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
-import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-
 @EnableRabbit
-@SpringBootApplication
 //@EnableEurekaClient
+@SpringBootApplication
 public class Application {
 
-	static final String topicExchangeName = "spring-boot-exchange";
+//	static final String topicExchangeName = "spring-boot-exchange";
 
 	@Value("${queue.order.name}")
     private String queueName;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
  
     @Bean
     public Queue queue() {
         return new Queue(queueName, true);
     }
 
-    @Bean
+   /* @Bean
     TopicExchange exchange() {
         return new TopicExchange(topicExchangeName);
     }
@@ -54,14 +51,14 @@ public class Application {
     MessageListenerAdapter listenerAdapter(Receiver receiver) {
         return new MessageListenerAdapter(receiver, "receiveMessage");
     }
-
-    public static void main(String[] args) throws InterruptedException {
+*/
+ /*   public static void main(String[] args) throws InterruptedException {
     	try {
             SpringApplication.run(Application.class, args);
         	}catch(HibernateException exception){
         	     System.out.println("Problem creating session factory");
         	     exception.printStackTrace();
         	}
-    }
+    }*/
    
 }

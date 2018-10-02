@@ -326,19 +326,19 @@ public class Produto implements Serializable {
 		return serialVersionUID;
 	}
 
-	public Produto(long produtoId, String nome, String numeroProduto, /*boolean bandeira, boolean bandeiraAcabado,*/
-			String cor, int nivelEstoque, int pontoReordenar, double custoPadrao, double precoVenda,
-			String tamanhoProduto, String unidadeMedidaTamanho, String unidadeMedidaPeso, double pesoProduto,
-			int diasParaFabricarProduto, String linhaDoProduto, String classe, String estilo, Date dataDisponivelVenda,
-			Date dataNaoDisponivelVenda, Date dataProdutoDescontinuado, Date dataModificacao, List<Fotos> fotos,
-			List<Revisao> revisaos, List<ProdutoSubCategoria> produtoSubCategorias, List<Documento> documentos,
-			List<Modelo> modelos, UnidadeMedida unidadeMedida) {
+
+
+	public Produto(long produtoId, String nome, String numeroProduto, String cor, int nivelEstoque, int pontoReordenar,
+			double custoPadrao, double precoVenda, String tamanhoProduto, String unidadeMedidaTamanho,
+			String unidadeMedidaPeso, double pesoProduto, int diasParaFabricarProduto, String linhaDoProduto,
+			String classe, String estilo, Date dataDisponivelVenda, Date dataNaoDisponivelVenda,
+			Date dataProdutoDescontinuado, Date dataModificacao, List<Fotos> fotos, List<Revisao> revisaos,
+			List<ProdutoSubCategoria> produtoSubCategorias, List<Documento> documentos, List<Modelo> modelos,
+			UnidadeMedida unidadeMedida) {
 		super();
 		this.produtoId = produtoId;
 		this.nome = nome;
 		this.numeroProduto = numeroProduto;
-		/*this.bandeira = bandeira;
-		this.bandeiraAcabado = bandeiraAcabado;*/
 		Cor = cor;
 		this.nivelEstoque = nivelEstoque;
 		this.pontoReordenar = pontoReordenar;
@@ -364,19 +364,182 @@ public class Produto implements Serializable {
 		this.unidadeMedida = unidadeMedida;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Produto [produtoId=" + produtoId + ", nome=" + nome + ", numeroProduto=" + numeroProduto + /*", bandeira="
-				+ bandeira + ", bandeiraAcabado=" + bandeiraAcabado + */", Cor=" + Cor + ", nivelEstoque=" + nivelEstoque
-				+ ", pontoReordenar=" + pontoReordenar + ", custoPadrao=" + custoPadrao + ", precoVenda=" + precoVenda
-				+ ", tamanhoProduto=" + tamanhoProduto + ", unidadeMedidaTamanho=" + unidadeMedidaTamanho
-				+ ", unidadeMedidaPeso=" + unidadeMedidaPeso + ", pesoProduto=" + pesoProduto
-				+ ", diasParaFabricarProduto=" + diasParaFabricarProduto + ", linhaDoProduto=" + linhaDoProduto
-				+ ", classe=" + classe + ", estilo=" + estilo + ", dataDisponivelVenda=" + dataDisponivelVenda
-				+ ", dataNaoDisponivelVenda=" + dataNaoDisponivelVenda + ", dataProdutoDescontinuado="
-				+ dataProdutoDescontinuado + ", dataModificacao=" + dataModificacao + ", fotos=" + fotos + ", revisaos="
-				+ revisaos + ", produtoSubCategorias=" + produtoSubCategorias + ", documentos=" + documentos
-				+ ", modelos=" + modelos + ", unidadeMedida=" + unidadeMedida + "]";
+		return "Produto [produtoId=" + produtoId + ", nome=" + nome + ", numeroProduto=" + numeroProduto + ", Cor="
+				+ Cor + ", nivelEstoque=" + nivelEstoque + ", pontoReordenar=" + pontoReordenar + ", custoPadrao="
+				+ custoPadrao + ", precoVenda=" + precoVenda + ", tamanhoProduto=" + tamanhoProduto
+				+ ", unidadeMedidaTamanho=" + unidadeMedidaTamanho + ", unidadeMedidaPeso=" + unidadeMedidaPeso
+				+ ", pesoProduto=" + pesoProduto + ", diasParaFabricarProduto=" + diasParaFabricarProduto
+				+ ", linhaDoProduto=" + linhaDoProduto + ", classe=" + classe + ", estilo=" + estilo
+				+ ", dataDisponivelVenda=" + dataDisponivelVenda + ", dataNaoDisponivelVenda=" + dataNaoDisponivelVenda
+				+ ", dataProdutoDescontinuado=" + dataProdutoDescontinuado + ", dataModificacao=" + dataModificacao
+				+ ", fotos=" + fotos + ", revisaos=" + revisaos + ", produtoSubCategorias=" + produtoSubCategorias
+				+ ", documentos=" + documentos + ", modelos=" + modelos + ", unidadeMedida=" + unidadeMedida + "]";
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Cor == null) ? 0 : Cor.hashCode());
+		result = prime * result + ((classe == null) ? 0 : classe.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(custoPadrao);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((dataDisponivelVenda == null) ? 0 : dataDisponivelVenda.hashCode());
+		result = prime * result + ((dataModificacao == null) ? 0 : dataModificacao.hashCode());
+		result = prime * result + ((dataNaoDisponivelVenda == null) ? 0 : dataNaoDisponivelVenda.hashCode());
+		result = prime * result + ((dataProdutoDescontinuado == null) ? 0 : dataProdutoDescontinuado.hashCode());
+		result = prime * result + diasParaFabricarProduto;
+		result = prime * result + ((documentos == null) ? 0 : documentos.hashCode());
+		result = prime * result + ((estilo == null) ? 0 : estilo.hashCode());
+		result = prime * result + ((fotos == null) ? 0 : fotos.hashCode());
+		result = prime * result + ((linhaDoProduto == null) ? 0 : linhaDoProduto.hashCode());
+		result = prime * result + ((modelos == null) ? 0 : modelos.hashCode());
+		result = prime * result + nivelEstoque;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((numeroProduto == null) ? 0 : numeroProduto.hashCode());
+		temp = Double.doubleToLongBits(pesoProduto);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + pontoReordenar;
+		temp = Double.doubleToLongBits(precoVenda);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + (int) (produtoId ^ (produtoId >>> 32));
+		result = prime * result + ((produtoSubCategorias == null) ? 0 : produtoSubCategorias.hashCode());
+		result = prime * result + ((revisaos == null) ? 0 : revisaos.hashCode());
+		result = prime * result + ((tamanhoProduto == null) ? 0 : tamanhoProduto.hashCode());
+		result = prime * result + ((unidadeMedida == null) ? 0 : unidadeMedida.hashCode());
+		result = prime * result + ((unidadeMedidaPeso == null) ? 0 : unidadeMedidaPeso.hashCode());
+		result = prime * result + ((unidadeMedidaTamanho == null) ? 0 : unidadeMedidaTamanho.hashCode());
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Produto other = (Produto) obj;
+		if (Cor == null) {
+			if (other.Cor != null)
+				return false;
+		} else if (!Cor.equals(other.Cor))
+			return false;
+		if (classe == null) {
+			if (other.classe != null)
+				return false;
+		} else if (!classe.equals(other.classe))
+			return false;
+		if (Double.doubleToLongBits(custoPadrao) != Double.doubleToLongBits(other.custoPadrao))
+			return false;
+		if (dataDisponivelVenda == null) {
+			if (other.dataDisponivelVenda != null)
+				return false;
+		} else if (!dataDisponivelVenda.equals(other.dataDisponivelVenda))
+			return false;
+		if (dataModificacao == null) {
+			if (other.dataModificacao != null)
+				return false;
+		} else if (!dataModificacao.equals(other.dataModificacao))
+			return false;
+		if (dataNaoDisponivelVenda == null) {
+			if (other.dataNaoDisponivelVenda != null)
+				return false;
+		} else if (!dataNaoDisponivelVenda.equals(other.dataNaoDisponivelVenda))
+			return false;
+		if (dataProdutoDescontinuado == null) {
+			if (other.dataProdutoDescontinuado != null)
+				return false;
+		} else if (!dataProdutoDescontinuado.equals(other.dataProdutoDescontinuado))
+			return false;
+		if (diasParaFabricarProduto != other.diasParaFabricarProduto)
+			return false;
+		if (documentos == null) {
+			if (other.documentos != null)
+				return false;
+		} else if (!documentos.equals(other.documentos))
+			return false;
+		if (estilo == null) {
+			if (other.estilo != null)
+				return false;
+		} else if (!estilo.equals(other.estilo))
+			return false;
+		if (fotos == null) {
+			if (other.fotos != null)
+				return false;
+		} else if (!fotos.equals(other.fotos))
+			return false;
+		if (linhaDoProduto == null) {
+			if (other.linhaDoProduto != null)
+				return false;
+		} else if (!linhaDoProduto.equals(other.linhaDoProduto))
+			return false;
+		if (modelos == null) {
+			if (other.modelos != null)
+				return false;
+		} else if (!modelos.equals(other.modelos))
+			return false;
+		if (nivelEstoque != other.nivelEstoque)
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (numeroProduto == null) {
+			if (other.numeroProduto != null)
+				return false;
+		} else if (!numeroProduto.equals(other.numeroProduto))
+			return false;
+		if (Double.doubleToLongBits(pesoProduto) != Double.doubleToLongBits(other.pesoProduto))
+			return false;
+		if (pontoReordenar != other.pontoReordenar)
+			return false;
+		if (Double.doubleToLongBits(precoVenda) != Double.doubleToLongBits(other.precoVenda))
+			return false;
+		if (produtoId != other.produtoId)
+			return false;
+		if (produtoSubCategorias == null) {
+			if (other.produtoSubCategorias != null)
+				return false;
+		} else if (!produtoSubCategorias.equals(other.produtoSubCategorias))
+			return false;
+		if (revisaos == null) {
+			if (other.revisaos != null)
+				return false;
+		} else if (!revisaos.equals(other.revisaos))
+			return false;
+		if (tamanhoProduto == null) {
+			if (other.tamanhoProduto != null)
+				return false;
+		} else if (!tamanhoProduto.equals(other.tamanhoProduto))
+			return false;
+		if (unidadeMedida == null) {
+			if (other.unidadeMedida != null)
+				return false;
+		} else if (!unidadeMedida.equals(other.unidadeMedida))
+			return false;
+		if (unidadeMedidaPeso == null) {
+			if (other.unidadeMedidaPeso != null)
+				return false;
+		} else if (!unidadeMedidaPeso.equals(other.unidadeMedidaPeso))
+			return false;
+		if (unidadeMedidaTamanho == null) {
+			if (other.unidadeMedidaTamanho != null)
+				return false;
+		} else if (!unidadeMedidaTamanho.equals(other.unidadeMedidaTamanho))
+			return false;
+		return true;
 	}
 	
 

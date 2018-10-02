@@ -26,12 +26,6 @@ public class Ilustracao implements Serializable {
 	private String diagrama;
 	@NotNull
 	private Date dataModificacao;
-	public Ilustracao() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
 	
 	public long getIlustracaoId() {
 		return ilustracaoId;
@@ -62,12 +56,38 @@ public class Ilustracao implements Serializable {
 	}
 
 	@Override
-	public String toString() {
-		return "Ilustracao [ilustracaoId=" + ilustracaoId + ", diagrama=" + diagrama + ", dataModificacao="
-				+ dataModificacao + "]";
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dataModificacao == null) ? 0 : dataModificacao.hashCode());
+		result = prime * result + ((diagrama == null) ? 0 : diagrama.hashCode());
+		result = prime * result + (int) (ilustracaoId ^ (ilustracaoId >>> 32));
+		return result;
 	}
 
-
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Ilustracao other = (Ilustracao) obj;
+		if (dataModificacao == null) {
+			if (other.dataModificacao != null)
+				return false;
+		} else if (!dataModificacao.equals(other.dataModificacao))
+			return false;
+		if (diagrama == null) {
+			if (other.diagrama != null)
+				return false;
+		} else if (!diagrama.equals(other.diagrama))
+			return false;
+		if (ilustracaoId != other.ilustracaoId)
+			return false;
+		return true;
+	}
 
 	public Ilustracao(long ilustracaoId, String diagrama, Date dataModificacao) {
 		super();
@@ -75,8 +95,14 @@ public class Ilustracao implements Serializable {
 		this.diagrama = diagrama;
 		this.dataModificacao = dataModificacao;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Ilustracao [ilustracaoId=" + ilustracaoId + ", diagrama=" + diagrama + ", dataModificacao="
+				+ dataModificacao + "]";
+	}
+
+
 	
 	
 }

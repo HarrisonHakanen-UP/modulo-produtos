@@ -14,17 +14,6 @@ public class ProdutoExterno {
 	private String nome;
 	private double preco;
 	
-	public ProdutoExterno() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public ProdutoExterno(long idProduto, String nome, double preco) {
-		super();
-		this.idProduto = idProduto;
-		this.nome = nome;
-		this.preco = preco;
-	}
-	
 	public long getId() {
 		return id;
 	}
@@ -48,10 +37,6 @@ public class ProdutoExterno {
 	}
 	public void setPreco(double preco) {
 		this.preco = preco;
-	}
-	@Override
-	public String toString() {
-		return "ProdutoExterno [id=" + id + ", idProduto=" + idProduto + ", nome=" + nome + ", preco=" + preco + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -87,7 +72,17 @@ public class ProdutoExterno {
 			return false;
 		return true;
 	}
-	
+	public ProdutoExterno(long id, long idProduto, String nome, double preco) {
+		super();
+		this.id = id;
+		this.idProduto = idProduto;
+		this.nome = nome;
+		this.preco = preco;
+	}
+	@Override
+	public String toString() {
+		return "ProdutoExterno [id=" + id + ", idProduto=" + idProduto + ", nome=" + nome + ", preco=" + preco + "]";
+	}
 	
 
 }

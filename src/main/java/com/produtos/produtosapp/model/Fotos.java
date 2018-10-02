@@ -167,6 +167,8 @@ public class Fotos implements Serializable {
 		this.produto = produto;
 	}
 
+
+
 	public Fotos(long fotoId, String imagemPequena, String nomeImagemPequena, String imagemGrande,
 			String nomeImagemGrande, boolean principal, Date dataModificacao, Produto produto) {
 		super();
@@ -180,16 +182,12 @@ public class Fotos implements Serializable {
 		this.produto = produto;
 	}
 
-	public Fotos() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	@Override
 	public String toString() {
 		return "Fotos [fotoId=" + fotoId + ", imagemPequena=" + imagemPequena + ", nomeImagemPequena="
 				+ nomeImagemPequena + ", imagemGrande=" + imagemGrande + ", nomeImagemGrande=" + nomeImagemGrande
 				+ ", principal=" + principal + ", dataModificacao=" + dataModificacao + ", produto=" + produto + "]";
 	}
+
 		
 }

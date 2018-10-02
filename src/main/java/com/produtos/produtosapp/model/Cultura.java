@@ -58,6 +58,45 @@ public class Cultura implements Serializable {
 		return serialVersionUID;
 	}
 
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (culturaId ^ (culturaId >>> 32));
+		result = prime * result + ((dataCadastro == null) ? 0 : dataCadastro.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cultura other = (Cultura) obj;
+		if (culturaId != other.culturaId)
+			return false;
+		if (dataCadastro == null) {
+			if (other.dataCadastro != null)
+				return false;
+		} else if (!dataCadastro.equals(other.dataCadastro))
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		return true;
+	}
+
+
+
 	public Cultura(long culturaId, String nome, Date dataCadastro) {
 		super();
 		this.culturaId = culturaId;
@@ -65,9 +104,11 @@ public class Cultura implements Serializable {
 		this.dataCadastro = dataCadastro;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "Cultura [culturaId=" + culturaId + ", nome=" + nome + ", dataCadastro=" + dataCadastro + "]";
-	}	
+	}
 	
 }

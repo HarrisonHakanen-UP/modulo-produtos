@@ -134,19 +134,24 @@ public class Modelo implements Serializable {
 		return serialVersionUID;
 	}
 
+
+
 	public Modelo(long modeloId, String nome, String catalogoDescricao, String instrucao, Date dataModificacao,
 			Produto protuto, Ilustracao ilustracoes, Cultura cultura, Descricao descricao) {
 		super();
-		this.ModeloId = modeloId;
-		this.Nome = nome;
-		this.CatalogoDescricao = catalogoDescricao;
-		this.Instrucao = instrucao;
+		ModeloId = modeloId;
+		Nome = nome;
+		CatalogoDescricao = catalogoDescricao;
+		Instrucao = instrucao;
 		this.dataModificacao = dataModificacao;
 		this.protuto = protuto;
 		this.ilustracoes = ilustracoes;
 		this.cultura = cultura;
 		this.descricao = descricao;
 	}
+
+
+	
 
 	@Override
 	public String toString() {

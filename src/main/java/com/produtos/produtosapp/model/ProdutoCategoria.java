@@ -24,58 +24,6 @@ public class ProdutoCategoria {
 		private Date dataModificacao;
 //		@OneToOne
 //		private ProdutoSubCategoria  produtoSubCategoria;
-		
-		
-		
-		public ProdutoCategoria() {
-			super();
-			// TODO Auto-generated constructor stub
-		}	
-		
-
-		@Override
-		public int hashCode() {
-			final int prime = 31;
-			int result = 1;
-			result = prime * result + (int) (ProdutoCategoriaID ^ (ProdutoCategoriaID >>> 32));
-			result = prime * result + ((dataModificacao == null) ? 0 : dataModificacao.hashCode());
-			result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-			//result = prime * result + ((produtoSubCategoria == null) ? 0 : produtoSubCategoria.hashCode());
-			return result;
-		}
-
-
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			ProdutoCategoria other = (ProdutoCategoria) obj;
-			if (ProdutoCategoriaID != other.ProdutoCategoriaID)
-				return false;
-			if (dataModificacao == null) {
-				if (other.dataModificacao != null)
-					return false;
-			} else if (!dataModificacao.equals(other.dataModificacao))
-				return false;
-			if (nome == null) {
-				if (other.nome != null)
-					return false;
-			} else if (!nome.equals(other.nome))
-				return false;
-//			if (produtoSubCategoria == null) {
-//				if (other.produtoSubCategoria != null)
-//					return false;
-//			} else if (!produtoSubCategoria.equals(other.produtoSubCategoria))
-//				return false;
-			return true;
-		}
-
-
 
 		public long getProdutoCategoriaID() {
 			return ProdutoCategoriaID;
@@ -103,6 +51,54 @@ public class ProdutoCategoria {
 			this.dataModificacao = dataModificacao;
 		}
 
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + (int) (ProdutoCategoriaID ^ (ProdutoCategoriaID >>> 32));
+			result = prime * result + ((dataModificacao == null) ? 0 : dataModificacao.hashCode());
+			result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			ProdutoCategoria other = (ProdutoCategoria) obj;
+			if (ProdutoCategoriaID != other.ProdutoCategoriaID)
+				return false;
+			if (dataModificacao == null) {
+				if (other.dataModificacao != null)
+					return false;
+			} else if (!dataModificacao.equals(other.dataModificacao))
+				return false;
+			if (nome == null) {
+				if (other.nome != null)
+					return false;
+			} else if (!nome.equals(other.nome))
+				return false;
+			return true;
+		}
+		
+
+		public ProdutoCategoria(long produtoCategoriaID, String nome, Date dataModificacao) {
+			super();
+			ProdutoCategoriaID = produtoCategoriaID;
+			this.nome = nome;
+			this.dataModificacao = dataModificacao;
+		}
+
+		@Override
+		public String toString() {
+			return "ProdutoCategoria [ProdutoCategoriaID=" + ProdutoCategoriaID + ", nome=" + nome
+					+ ", dataModificacao=" + dataModificacao + "]";
+		}
+
 //		public ProdutoSubCategoria getProdutoSubCategoria() {
 //			return produtoSubCategoria;
 //		}
@@ -112,20 +108,7 @@ public class ProdutoCategoria {
 //			this.produtoSubCategoria = produtoSubCategoria;
 //		}
 
-		public ProdutoCategoria(long produtoCategoriaID, String nome, Date dataModificacao,
-				ProdutoSubCategoria produtoSubCategoria) {
-			super();
-			ProdutoCategoriaID = produtoCategoriaID;
-			this.nome = nome;
-			this.dataModificacao = dataModificacao;
-			//this.produtoSubCategoria = produtoSubCategoria;
-		}
-
-		@Override
-		public String toString() {
-			return "ProdutoCategoria [ProdutoCategoriaID=" + ProdutoCategoriaID + ", nome=" + nome
-					+ ", dataModificacao=" + dataModificacao + " ]";
-		}	
+	
 		
 			
 }

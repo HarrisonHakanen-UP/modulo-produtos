@@ -25,55 +25,8 @@ public class UnidadeMedida implements Serializable{
 	private String nome;
 	
 	private Date dataModificacao;
-//	@OneToOne
-//	private Produto produto;
-
-	public UnidadeMedida() {
-		super();
-		// TODO Auto-generated constructor stub
-	}	
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (unidadeMedidaId ^ (unidadeMedidaId >>> 32));
-		result = prime * result + ((dataModificacao == null) ? 0 : dataModificacao.hashCode());
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		//result = prime * result + ((produto == null) ? 0 : produto.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		UnidadeMedida other = (UnidadeMedida) obj;
-		if (unidadeMedidaId != other.unidadeMedidaId)
-			return false;
-		if (dataModificacao == null) {
-			if (other.dataModificacao != null)
-				return false;
-		} else if (!dataModificacao.equals(other.dataModificacao))
-			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-//		if (produto == null) {
-//			if (other.produto != null)
-//				return false;
-//		} else if (!produto.equals(other.produto))
-//			return false;
-		return true;
-	}
-
-
+	@OneToOne
+	private Produto produto;	
 
 	public long getId() {
 		return unidadeMedidaId;
@@ -97,29 +50,69 @@ public class UnidadeMedida implements Serializable{
 		this.dataModificacao = dataModificacao;
 	}
 
-//	public Produto getProduto() {
-//		return produto;
-//	}
-//
-//	public void setProduto(Produto produto) {
-//		this.produto = produto;
-//	}
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	public UnidadeMedida(long id, String nome, Date dataModificacao, Produto produto) {
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dataModificacao == null) ? 0 : dataModificacao.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((produto == null) ? 0 : produto.hashCode());
+		result = prime * result + (int) (unidadeMedidaId ^ (unidadeMedidaId >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UnidadeMedida other = (UnidadeMedida) obj;
+		if (dataModificacao == null) {
+			if (other.dataModificacao != null)
+				return false;
+		} else if (!dataModificacao.equals(other.dataModificacao))
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (produto == null) {
+			if (other.produto != null)
+				return false;
+		} else if (!produto.equals(other.produto))
+			return false;
+		if (unidadeMedidaId != other.unidadeMedidaId)
+			return false;
+		return true;
+	}
+	public UnidadeMedida(long unidadeMedidaId, String nome, Date dataModificacao, Produto produto) {
 		super();
-		unidadeMedidaId = id;
+		this.unidadeMedidaId = unidadeMedidaId;
 		this.nome = nome;
 		this.dataModificacao = dataModificacao;
-		//this.produto = produto;
+		this.produto = produto;
 	}
-
 	@Override
 	public String toString() {
-		return "UnidadeMedida [Id=" + unidadeMedidaId + ", nome=" + nome + ", dataModificacao=" + dataModificacao + "]";
+		return "UnidadeMedida [unidadeMedidaId=" + unidadeMedidaId + ", nome=" + nome + ", dataModificacao="
+				+ dataModificacao + ", produto=" + produto + "]";
 	}
+
+	
+
 	
 }

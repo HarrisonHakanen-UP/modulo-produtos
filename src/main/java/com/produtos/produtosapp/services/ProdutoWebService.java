@@ -19,20 +19,37 @@ import org.springframework.web.bind.annotation.RestController;
 import com.produtos.produtosapp.model.Produto;
 import com.produtos.produtosapp.repository.ProdutoRepository;
 
+import io.swagger.annotations.ApiOperation;
 
 @Service
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/produto")
 public class ProdutoWebService {
 	
 	@Autowired
 	ProdutoRepository pr;
+	
+	@GetMapping 
+	@ApiOperation(value="Retorna uma lista de Usuários")
+	@RequestMapping("/listar")
+	public @ResponseBody Iterable<Produto> listaProdutos() 
+	{
+		Iterable<Produto> listaProdutos = pr.findAll();
+		return listaProdutos;				
+	}
 	
 	@PostMapping
 	@RequestMapping(value = "/cadastrarProduto", method = RequestMethod.POST)
 	public void persistirProduto(@RequestBody Produto produto) {
 		pr.save(produto);
 		System.out.println("Produto cadastrado com sucesso!");
+	}
+	
+	@RequestMapping("/cadastrar")
+	public void cadastraProduto(@RequestBody Produto produto) 
+	{
+		pr.save(produto);
+		System.out.println("Usuario cadastrado com sucesso!");
 	}
 	
 	@GetMapping
@@ -45,27 +62,18 @@ public class ProdutoWebService {
           return listaProdutos;
     }
 	
-	@GetMapping
-	@RequestMapping(value = "/listar", method = RequestMethod.GET)
-    public @ResponseBody Iterable<Produto> listar() {
-          Iterable<Produto> listaProdutos = pr.findAll();
-          return listaProdutos;
-    }
-	
 	@PutMapping
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public void updateUser(@PathVariable("id") long id, @RequestBody Produto produto) {
+    public void updateProd(@PathVariable("id") long id, @RequestBody Produto produto) {
         produto = pr.findOne(id);
         Produto prod = new Produto();
         pr.save(prod);
 	}
-     
-	
+
 	@DeleteMapping
-	@RequestMapping(value = "/deletar/{nome}", method = RequestMethod.DELETE)
-    public String deleteProduto(@PathVariable("nome") Produto nome) {
-		Produto produto = pr.findByNome(nome);
-		pr.delete(produto);
-		return "OK";
+	@RequestMapping("/deletar/{id}")
+    public Produto deleteProduto(@RequestBody Produto produtoId) {
+		pr.delete(produtoId);
+		return produtoId;
     }
 }

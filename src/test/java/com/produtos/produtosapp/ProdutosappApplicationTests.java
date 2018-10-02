@@ -67,12 +67,12 @@ public class ProdutosappApplicationTests {
 		
 
 		Produto produto = new Produto();
-		Fotos fotos = new Fotos();
-		UnidadeMedida unidadeMedida = new UnidadeMedida();
-		Revisao revisao = new Revisao();
-		ProdutoSubCategoria produtoSubCategoria = new ProdutoSubCategoria();
-		ProdutoCategoria produtoCategoria = new ProdutoCategoria();
-		Ilustracao ilustracao = new Ilustracao();
+		Fotos fotos = new Fotos(0, null, null, null, null, false, null, produto);
+		UnidadeMedida unidadeMedida = new UnidadeMedida(0, null, null, produto);
+		Revisao revisao = new Revisao(0, null, null, null, null, null, produto);
+		ProdutoSubCategoria produtoSubCategoria = new ProdutoSubCategoria(0, null, null, null, produto);
+		ProdutoCategoria produtoCategoria = new ProdutoCategoria(0, null, null);
+		Ilustracao ilustracao = new Ilustracao(0, null, null);
 		Descricao descricao = new Descricao();
 		Cultura cultura = new Cultura();
 		Documento documentos = new Documento();
@@ -187,7 +187,7 @@ public class ProdutosappApplicationTests {
 		System.out.println(teste);		
 		
 
-		// listar
+	/*	// listar
 		for (Produto objeto : ProdutoRepositorio.findAll()) {
 			System.out.println("\n" + "Produto ID: " + objeto.getProdutoId() + "\n" + "Nome: " + objeto.getNome() + "\n"
 					+ "Numero do Produto  :" + objeto.getNumeroProduto() + "\n" + "Cor Produto : " + objeto.getCor()
@@ -203,7 +203,7 @@ public class ProdutosappApplicationTests {
 					+ "Data nao disponivel : " + objeto.getDataNaoDisponivelVenda() + "\n"
 					+ "Data descontinuado Produto : " + objeto.getDataProdutoDescontinuado() + "\n"
 					+ "Data Modificação : " + objeto.getDataModificacao() + "\n");
-		}
+		}*/
 
 //		// deletar
 //		long i = 7;
