@@ -1,8 +1,10 @@
 package com.produtos.produtosapp.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -72,6 +74,21 @@ public class ProdutoWebService {
         }
       
 	}
+	
+/*	@PutMapping("/students/{id}")
+	public ResponseEntity<Object> updateStudent(@RequestBody Produto produto, @PathVariable long id) {
+
+		Optional<Produto> produtoOptional = pr.findById(id);
+
+		if (!produtoOptional.isPresent())
+			return ResponseEntity.notFound().build();
+
+		produto.setProdutoId(id);
+		
+		pr.save(produto);
+
+		return ResponseEntity.noContent().build();
+	}*/
 
 	@DeleteMapping
 	@RequestMapping("/deletar/{id}")

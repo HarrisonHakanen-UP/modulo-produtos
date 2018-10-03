@@ -2,16 +2,18 @@ package com.produtos.produtosapp.repository;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
+import org.yaml.snakeyaml.events.Event.ID;
 
 import com.produtos.produtosapp.model.Produto;
 
 
 public interface ProdutoRepository extends CrudRepository<Produto, Long>{
-
+	
+	
 	//Produto findByName(String nome);	
 	List<Produto> findByNome(String nome);
 	
