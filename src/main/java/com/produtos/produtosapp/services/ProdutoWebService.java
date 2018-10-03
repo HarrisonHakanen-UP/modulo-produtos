@@ -45,12 +45,12 @@ public class ProdutoWebService {
 		System.out.println("Produto cadastrado com sucesso!");
 	}
 	
-	@RequestMapping("/cadastrar")
+/*	@RequestMapping("/cadastrar")
 	public void cadastraProduto(@RequestBody Produto produto) 
 	{
 		pr.save(produto);
-		System.out.println("Usuario cadastrado com sucesso!");
-	}
+		System.out.println("Produto cadastrado com sucesso!");
+	}*/
 	
 	@GetMapping
 	@RequestMapping(value = "/{nome}", method = RequestMethod.GET)
@@ -63,16 +63,21 @@ public class ProdutoWebService {
     }
 	
 	@PutMapping
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    @RequestMapping("/alterar/{id}")
     public void updateProd(@PathVariable("id") long id, @RequestBody Produto produto) {
-        Produto prod = new Produto();
-        pr.save(prod);
+        if(produto != null) {
+        	Produto produtoBanco = pr.findOne(id);
+        	//produtoBanco.setNome(produto.getNome());
+            pr.save(produto);  	
+        }
+      
 	}
 
 	@DeleteMapping
 	@RequestMapping("/deletar/{id}")
-    public Produto deleteProduto(@RequestBody Produto produtoId) {
-		pr.delete(produtoId);
-		return produtoId;
+    public boolean deleteProduto(@PathVariable("id") long id) {
+		pr.delete(id);
+		System.out.println("Produto deletado!");
+		return true;
     }
 }

@@ -1,6 +1,8 @@
 package com.produtos.produtosapp;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,36 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.produtos.produtosapp.model.Cultura;
-import com.produtos.produtosapp.model.Descricao;
-import com.produtos.produtosapp.model.Documento;
-import com.produtos.produtosapp.model.Fotos;
-import com.produtos.produtosapp.model.Ilustracao;
-import com.produtos.produtosapp.model.Modelo;
-import com.produtos.produtosapp.model.Produto;
-import com.produtos.produtosapp.model.ProdutoCategoria;
-import com.produtos.produtosapp.model.ProdutoSubCategoria;
-import com.produtos.produtosapp.model.Revisao;
-import com.produtos.produtosapp.model.UnidadeMedida;
-import com.produtos.produtosapp.repository.CulturaRepository;
-import com.produtos.produtosapp.repository.DescricaoRepository;
-import com.produtos.produtosapp.repository.DocumentoRepository;
-import com.produtos.produtosapp.repository.FotoRepository;
-import com.produtos.produtosapp.repository.IlustracaoRepository;
-import com.produtos.produtosapp.repository.ModeloRepository;
-import com.produtos.produtosapp.repository.ProdutoCategoriaRepository;
-import com.produtos.produtosapp.repository.ProdutoRepository;
-import com.produtos.produtosapp.repository.ProdutoSubCategoriaRepository;
-import com.produtos.produtosapp.repository.RevisaoRepository;
-import com.produtos.produtosapp.repository.UnidadeMedidaRepository;
-
-
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ProdutosappApplicationTests {
 	
-	@Autowired
+	/*@Autowired
 	private ProdutoRepository ProdutoRepositorio;
 
 	
@@ -50,13 +28,13 @@ public class ProdutosappApplicationTests {
 		Produto produto = new Produto();
 
 		Date data = new Date(System.currentTimeMillis());
-
+		
 		// criar
 		produto.setProdutoId(2);
 		produto.setNome("M");
 		produto.setNumeroProduto("8");
-	/*	produto.setBandeira(true);
-		produto.setBandeiraAcabado(false);*/
+		produto.setBandeira(true);
+		produto.setBandeiraAcabado(false);
 		produto.setCor("v");		
 		produto.setNivelEstoque(6);
 		produto.setPontoReordenar(2);
@@ -75,6 +53,8 @@ public class ProdutosappApplicationTests {
 		produto.setDataProdutoDescontinuado(data);
 		produto.setDataModificacao(data);
 		
+		ProdutoRepositorio.save(produto);
+*/
 		
 /*		fotos.setDataModificacao(data);
 		fotos.setImagemGrande("http://jbwefhebubewvb");
@@ -154,11 +134,6 @@ public class ProdutosappApplicationTests {
 		ModeloRepositorio.save(modelo);		
 		
 		*/
-		String teste = produto.getNome();
-		
-		
-		System.out.println(teste);		
-		
 
 	/*	// listar
 		for (Produto objeto : ProdutoRepositorio.findAll()) {
@@ -190,4 +165,4 @@ public class ProdutosappApplicationTests {
 //		ProdutoRepositorio.save(produto);
 
 	}
-}
+
