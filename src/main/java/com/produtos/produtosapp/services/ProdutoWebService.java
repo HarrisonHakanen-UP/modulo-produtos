@@ -64,7 +64,7 @@ public class ProdutoWebService {
           return listaProdutos;
     }
 	
-	@PutMapping
+/*	@PutMapping
     @RequestMapping("/alterar/{id}")
     public void updateProd(@PathVariable("id") long id, @RequestBody Produto produto) {
         if(produto != null) {
@@ -73,22 +73,22 @@ public class ProdutoWebService {
             pr.save(produto);  	
         }
       
-	}
+	}*/
 	
-/*	@PutMapping("/students/{id}")
+	@PutMapping("/alterar/{id}")
 	public ResponseEntity<Object> updateStudent(@RequestBody Produto produto, @PathVariable long id) {
 
-		Optional<Produto> produtoOptional = pr.findById(id);
+		Produto produtoOptional = pr.getByProdutoId(id);
 
-		if (!produtoOptional.isPresent())
+		if (produtoOptional == null) {
 			return ResponseEntity.notFound().build();
-
+		}else {
 		produto.setProdutoId(id);
-		
+		}
 		pr.save(produto);
 
 		return ResponseEntity.noContent().build();
-	}*/
+	}
 
 	@DeleteMapping
 	@RequestMapping("/deletar/{id}")
