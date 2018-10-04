@@ -31,17 +31,17 @@ public class ProdutosappApplicationTests {
 
 	@Test
 	public void ProdutoCreate() {		
-		
+	
+		Produto produto = new Produto();
 
-		//Produto produto = new Produto();
+	/*	
 		ProdutoRepositorio.save(new Produto(1, "teste",  "1","azul", 20, 3,
 				800, 1000,"3566", "teste",
 				"teste", 50, 15, "teste",
 				"teste", "teste", null, null,
 				null, null, null , null,
 				null, null, null,
-				null));
-		Produto produto = new Produto();
+				null));*/
 //
 //		acao = acaoRepository.getOne(1);
 //		acao.setDsAcao("visualizar ações");
@@ -50,7 +50,7 @@ public class ProdutosappApplicationTests {
 		Date data = new Date(System.currentTimeMillis());
 		
 		// criar
-		produto.setProdutoId(2);
+		produto.setProdutoId(67);
 		produto.setNome("M");
 		produto.setNumeroProduto("8");
 		produto.setBandeira(true);
@@ -73,8 +73,8 @@ public class ProdutosappApplicationTests {
 		produto.setDataProdutoDescontinuado(data);
 		produto.setDataModificacao(data);
 		
-		ProdutoRepositorio.save(produto);
-*/
+		ProdutoRepositorio.save(produto);*/
+
 		
 /*		fotos.setDataModificacao(data);
 		fotos.setImagemGrande("http://jbwefhebubewvb");
