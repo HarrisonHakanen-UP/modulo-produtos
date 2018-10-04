@@ -1,7 +1,6 @@
 package com.produtos.produtosapp;
 
-import java.sql.Date;
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -10,12 +9,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.produtos.produtosapp.model.Documento;
+import com.produtos.produtosapp.model.Fotos;
+import com.produtos.produtosapp.model.Modelo;
+import com.produtos.produtosapp.model.Produto;
+import com.produtos.produtosapp.model.ProdutoSubCategoria;
+import com.produtos.produtosapp.model.Revisao;
+import com.produtos.produtosapp.model.UnidadeMedida;
+import com.produtos.produtosapp.repository.ProdutoRepository;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ProdutosappApplicationTests {
 	
-	/*@Autowired
+	@Autowired
 	private ProdutoRepository ProdutoRepositorio;
 
 	
@@ -25,8 +33,20 @@ public class ProdutosappApplicationTests {
 	public void ProdutoCreate() {		
 		
 
+		//Produto produto = new Produto();
+		ProdutoRepositorio.save(new Produto(1, "teste",  "1","azul", 20, 3,
+				800, 1000,"3566", "teste",
+				"teste", 50, 15, "teste",
+				"teste", "teste", null, null,
+				null, null, null , null,
+				null, null, null,
+				null));
 		Produto produto = new Produto();
-
+//
+//		acao = acaoRepository.getOne(1);
+//		acao.setDsAcao("visualizar ações");
+//		acaoRepository.save(acao);
+/*
 		Date data = new Date(System.currentTimeMillis());
 		
 		// criar
@@ -135,7 +155,7 @@ public class ProdutosappApplicationTests {
 		
 		*/
 
-	/*	// listar
+/*		// listar
 		for (Produto objeto : ProdutoRepositorio.findAll()) {
 			System.out.println("\n" + "Produto ID: " + objeto.getProdutoId() + "\n" + "Nome: " + objeto.getNome() + "\n"
 					+ "Numero do Produto  :" + objeto.getNumeroProduto() + "\n" + "Cor Produto : " + objeto.getCor()
@@ -165,4 +185,4 @@ public class ProdutosappApplicationTests {
 //		ProdutoRepositorio.save(produto);
 
 	}
-
+}
