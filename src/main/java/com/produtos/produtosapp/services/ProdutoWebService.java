@@ -93,7 +93,7 @@ public class ProdutoWebService {
 	@DeleteMapping
 	@RequestMapping("/deletar/{id}")
     public boolean deleteProduto(@PathVariable("id") long id) {
-		pr.delete(id);
+		pr.deleteById(id);
 		System.out.println("Produto deletado!");
 		return true;
     }
