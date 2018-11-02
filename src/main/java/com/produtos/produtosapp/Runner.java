@@ -19,7 +19,7 @@ public class Runner implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		
-	/*	String msg;
+		String msg;
 		int opcao = 10;
 		
 		for (int i = 0; i < opcao; i++) {
@@ -33,9 +33,9 @@ public class Runner implements CommandLineRunner {
 			sender.send(msg);
 			System.out.println("Mensagem enviada...");
 			
-		}*/
+		}
 		
 		
-	
 	}
+
 }

@@ -32,7 +32,7 @@ public class ProdutoWebService {
 	ProdutoRepository pr;
 	
 	@GetMapping 
-	@ApiOperation(value="Retorna uma lista de Usuários")
+	@ApiOperation(value="Retorna uma lista de Produtos")
 	@RequestMapping("/listar")
 	public @ResponseBody Iterable<Produto> listaProdutos() 
 	{
@@ -93,7 +93,7 @@ public class ProdutoWebService {
 	@DeleteMapping
 	@RequestMapping("/deletar/{id}")
     public boolean deleteProduto(@PathVariable("id") long id) {
-		pr.deleteById(id);
+		pr.delete(id);
 		System.out.println("Produto deletado!");
 		return true;
     }

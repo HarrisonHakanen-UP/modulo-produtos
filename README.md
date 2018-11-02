@@ -3,7 +3,7 @@
 [GET] Listar: http://localhost:3002/produto/listar
 [POST] Cadastrar: http://localhost:3002/produto/cadastrarProduto
 [DELETE] Deletar: http://localhost:3002/produto/deletar/{id do produto}
-[PUT] Listar: http://localhost:3002/produto/listar
+[PUT] Alterar: http://localhost:3002/produto/listar
 Exemplo body:
  {
         "produtoId": 2,
