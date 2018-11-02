@@ -1,10 +1,12 @@
-#ROTAS
+# ROTAS
 
-[GET] Listar: http://localhost:3002/produto/listar
-[POST] Cadastrar: http://localhost:3002/produto/cadastrarProduto
-[DELETE] Deletar: http://localhost:3002/produto/deletar/{id do produto}
-[PUT] Alterar: http://localhost:3002/produto/listar
-Exemplo body:
+- [GET]    Listar:    http://localhost:3002/produto/listar
+- [POST]   Cadastrar: http://localhost:3002/produto/cadastrarProduto
+- [DELETE] Deletar:   http://localhost:3002/produto/deletar/{id_do_produto}
+- [PUT]    Alterar:   http://localhost:3002/produto/listar
+
+### JSON de produto:
+```
  {
         "produtoId": 2,
         "nome": "teste2",
@@ -32,5 +34,6 @@ Exemplo body:
         "modelos": [],
         "unidadeMedida": null,
         "cor": null
-    }
+    }    
+    ```
  
