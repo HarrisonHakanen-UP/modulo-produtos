@@ -1,4 +1,6 @@
-# ROTAS
+# modulo-produtos
+
+## ROTAS
 
 - [GET]    Listar:    http://localhost:3002/produto/listar
 - [POST]   Cadastrar: http://localhost:3002/produto/cadastrarProduto
@@ -34,6 +36,4 @@
         "modelos": [],
         "unidadeMedida": null,
         "cor": null
-    }    
-    ```
- 
+    }
