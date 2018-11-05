@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
-
 import javax.persistence.Entity;
 
 import javax.persistence.GeneratedValue;
@@ -27,22 +25,22 @@ public class Produto implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-
 	@Id
 	@GeneratedValue
 	private long produtoId;
 
-	
 	@NotNull
 	private String nome;
-	
+
 	@NotNull
 	private String numeroProduto;
-	
-/*	private boolean bandeira;
-	
-	private boolean bandeiraAcabado;*/
-	
+
+	/*
+	 * private boolean bandeira;
+	 * 
+	 * private boolean bandeiraAcabado;
+	 */
+
 	private String Cor;
 
 	private int nivelEstoque;
@@ -50,35 +48,31 @@ public class Produto implements Serializable {
 	private int pontoReordenar;
 
 	private double custoPadrao;
-	
 
 	private double precoVenda;
-	
+
 	private String tamanhoProduto;
-	
+
 	private String unidadeMedidaTamanho;
-	
+
 	private String unidadeMedidaPeso;
-	
+
 	private double pesoProduto;
-	
-		
+
 	private int diasParaFabricarProduto;
-	
+
 	private String linhaDoProduto;
-	
+
 	private String classe;
-	
+
 	private String estilo;
-	
 
 	private Date dataDisponivelVenda;
-	
+
 	private Date dataNaoDisponivelVenda;
-	
+
 	private Date dataProdutoDescontinuado;
-	
-	
+
 	private Date dataModificacao;
 
 	@OneToMany
@@ -92,10 +86,10 @@ public class Produto implements Serializable {
 
 	@OneToMany
 	private List<Documento> documentos = new ArrayList<>();
-	
+
 	@OneToMany
 	private List<Modelo> modelos = new ArrayList<>();
-	
+
 	@OneToOne
 	private UnidadeMedida unidadeMedida;
 
@@ -103,8 +97,6 @@ public class Produto implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 	public long getProdutoId() {
 		return produtoId;
@@ -129,21 +121,16 @@ public class Produto implements Serializable {
 	public void setNumeroProduto(String numeroProduto) {
 		this.numeroProduto = numeroProduto;
 	}
-	/*public boolean isBandeira() {
-		return bandeira;
-	}
 
-	public void setBandeira(boolean bandeira) {
-		this.bandeira = bandeira;
-	}
-
-	public boolean isBandeiraAcabado() {
-		return bandeiraAcabado;
-	}
-	public void setBandeiraAcabado(boolean bandeiraAcabado) {
-		this.bandeiraAcabado = bandeiraAcabado;
-	}
-*/
+	/*
+	 * public boolean isBandeira() { return bandeira; }
+	 * 
+	 * public void setBandeira(boolean bandeira) { this.bandeira = bandeira; }
+	 * 
+	 * public boolean isBandeiraAcabado() { return bandeiraAcabado; } public void
+	 * setBandeiraAcabado(boolean bandeiraAcabado) { this.bandeiraAcabado =
+	 * bandeiraAcabado; }
+	 */
 	public String getCor() {
 		return Cor;
 	}
@@ -195,6 +182,7 @@ public class Produto implements Serializable {
 	public String getUnidadeMedidaTamanho() {
 		return unidadeMedidaTamanho;
 	}
+
 	public void setUnidadeMedidaTamanho(String unidadeMedidaTamanho) {
 		this.unidadeMedidaTamanho = unidadeMedidaTamanho;
 	}
@@ -218,6 +206,7 @@ public class Produto implements Serializable {
 	public int getDiasParaFabricarProduto() {
 		return diasParaFabricarProduto;
 	}
+
 	public void setDiasParaFabricarProduto(int diasParaFabricarProduto) {
 		this.diasParaFabricarProduto = diasParaFabricarProduto;
 	}
@@ -237,6 +226,7 @@ public class Produto implements Serializable {
 	public void setClasse(String classe) {
 		this.classe = classe;
 	}
+
 	public String getEstilo() {
 		return estilo;
 	}
@@ -300,9 +290,11 @@ public class Produto implements Serializable {
 	public void setProdutoSubCategorias(List<ProdutoSubCategoria> produtoSubCategorias) {
 		this.produtoSubCategorias = produtoSubCategorias;
 	}
+
 	public List<Documento> getDocumentos() {
 		return documentos;
 	}
+
 	public void setDocumentos(List<Documento> documentos) {
 		this.documentos = documentos;
 	}
@@ -314,6 +306,7 @@ public class Produto implements Serializable {
 	public void setModelos(List<Modelo> modelos) {
 		this.modelos = modelos;
 	}
+
 	public UnidadeMedida getUnidadeMedida() {
 		return unidadeMedida;
 	}
@@ -325,8 +318,6 @@ public class Produto implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-
 
 	public Produto(long produtoId, String nome, String numeroProduto, String cor, int nivelEstoque, int pontoReordenar,
 			double custoPadrao, double precoVenda, String tamanhoProduto, String unidadeMedidaTamanho,
@@ -364,8 +355,6 @@ public class Produto implements Serializable {
 		this.unidadeMedida = unidadeMedida;
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Produto [produtoId=" + produtoId + ", nome=" + nome + ", numeroProduto=" + numeroProduto + ", Cor="
@@ -379,8 +368,6 @@ public class Produto implements Serializable {
 				+ ", fotos=" + fotos + ", revisaos=" + revisaos + ", produtoSubCategorias=" + produtoSubCategorias
 				+ ", documentos=" + documentos + ", modelos=" + modelos + ", unidadeMedida=" + unidadeMedida + "]";
 	}
-
-
 
 	@Override
 	public int hashCode() {
@@ -418,8 +405,6 @@ public class Produto implements Serializable {
 		result = prime * result + ((unidadeMedidaTamanho == null) ? 0 : unidadeMedidaTamanho.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -541,6 +526,5 @@ public class Produto implements Serializable {
 			return false;
 		return true;
 	}
-	
 
 }

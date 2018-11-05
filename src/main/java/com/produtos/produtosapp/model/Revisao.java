@@ -14,8 +14,8 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "revisao")
-public class Revisao implements Serializable{
-	
+public class Revisao implements Serializable {
+
 	/**
 	 * 
 	 */
@@ -24,18 +24,18 @@ public class Revisao implements Serializable{
 	@Id
 	@GeneratedValue
 	private long revisaoId;
-	
+
 	@NotNull
 	private String nomeRevisao;
 	@NotNull
 	private Date dataRevisao;
 	@NotNull
 	private String enderecoEmail;
-	
+
 	private String comentarios;
 	@NotNull
-	private Date dataModificacao;	
-	
+	private Date dataModificacao;
+
 	@ManyToOne
 	@JoinColumn
 	private Produto produto;
@@ -44,85 +44,57 @@ public class Revisao implements Serializable{
 		return revisaoId;
 	}
 
-
-
 	public void setRevisaoId(long revisaoId) {
 		this.revisaoId = revisaoId;
 	}
-
-
 
 	public String getNomeRevisao() {
 		return nomeRevisao;
 	}
 
-
-
 	public void setNomeRevisao(String nomeRevisao) {
 		this.nomeRevisao = nomeRevisao;
 	}
-
-
 
 	public Date getDataRevisao() {
 		return dataRevisao;
 	}
 
-
-
 	public void setDataRevisao(Date dataRevisao) {
 		this.dataRevisao = dataRevisao;
 	}
-
-
 
 	public String getEnderecoEmail() {
 		return enderecoEmail;
 	}
 
-
-
 	public void setEnderecoEmail(String enderecoEmail) {
 		this.enderecoEmail = enderecoEmail;
 	}
-
-
 
 	public String getComentarios() {
 		return comentarios;
 	}
 
-
-
 	public void setComentarios(String comentarios) {
 		this.comentarios = comentarios;
 	}
-
-
 
 	public Date getDataModificacao() {
 		return dataModificacao;
 	}
 
-
-
 	public void setDataModificacao(Date dataModificacao) {
 		this.dataModificacao = dataModificacao;
 	}
-
-
 
 	public Produto getProduto() {
 		return produto;
 	}
 
-
-
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
-
-
 
 	@Override
 	public int hashCode() {
@@ -137,8 +109,6 @@ public class Revisao implements Serializable{
 		result = prime * result + (int) (revisaoId ^ (revisaoId >>> 32));
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -184,8 +154,6 @@ public class Revisao implements Serializable{
 		return true;
 	}
 
-
-
 	public Revisao(long revisaoId, String nomeRevisao, Date dataRevisao, String enderecoEmail, String comentarios,
 			Date dataModificacao, Produto produto) {
 		super();
@@ -198,14 +166,11 @@ public class Revisao implements Serializable{
 		this.produto = produto;
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Revisao [revisaoId=" + revisaoId + ", nomeRevisao=" + nomeRevisao + ", dataRevisao=" + dataRevisao
 				+ ", enderecoEmail=" + enderecoEmail + ", comentarios=" + comentarios + ", dataModificacao="
 				+ dataModificacao + ", produto=" + produto + "]";
 	}
-
 
 }

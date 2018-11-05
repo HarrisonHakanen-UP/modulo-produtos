@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.produtos.produtosapp.model.Documento;
 
-public interface DocumentoRepository extends CrudRepository<Documento, Long>{
+public interface DocumentoRepository extends CrudRepository<Documento, Long> {
 
 }

@@ -2,10 +2,10 @@
 
 ## Rotas
 
-- [GET]    Listar:    http://localhost:3002/produto/listar
-- [POST]   Cadastrar: http://localhost:3002/produto/cadastrarProduto
-- [DELETE] Deletar:   http://localhost:3002/produto/deletar/{id_do_produto}
-- [PUT]    Alterar:   http://localhost:3002/produto/listar
+- [GET]    Listar:    http://localhost:8094/produto/listar
+- [POST]   Cadastrar: http://localhost:8094/produto/cadastrarProduto
+- [DELETE] Deletar:   http://localhost:8094/produto/deletar/{id_do_produto}
+- [PUT]    Alterar:   http://localhost:8094/produto/listar
 
 ### JSON de produto
 ```

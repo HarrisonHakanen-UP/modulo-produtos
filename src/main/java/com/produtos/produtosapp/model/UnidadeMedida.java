@@ -11,8 +11,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "unidadeMedida")
-public class UnidadeMedida implements Serializable{
-	
+public class UnidadeMedida implements Serializable {
+
 	/**
 	 * 
 	 */
@@ -21,16 +21,17 @@ public class UnidadeMedida implements Serializable{
 	@Id
 	@GeneratedValue
 	private long unidadeMedidaId;
-	
+
 	private String nome;
-	
+
 	private Date dataModificacao;
 	@OneToOne
-	private Produto produto;	
+	private Produto produto;
 
 	public long getId() {
 		return unidadeMedidaId;
 	}
+
 	public void setId(long id) {
 		unidadeMedidaId = id;
 	}
@@ -42,6 +43,7 @@ public class UnidadeMedida implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public Date getDataModificacao() {
 		return dataModificacao;
 	}
@@ -61,6 +63,7 @@ public class UnidadeMedida implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -71,6 +74,7 @@ public class UnidadeMedida implements Serializable{
 		result = prime * result + (int) (unidadeMedidaId ^ (unidadeMedidaId >>> 32));
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -99,6 +103,7 @@ public class UnidadeMedida implements Serializable{
 			return false;
 		return true;
 	}
+
 	public UnidadeMedida(long unidadeMedidaId, String nome, Date dataModificacao, Produto produto) {
 		super();
 		this.unidadeMedidaId = unidadeMedidaId;
@@ -106,13 +111,11 @@ public class UnidadeMedida implements Serializable{
 		this.dataModificacao = dataModificacao;
 		this.produto = produto;
 	}
+
 	@Override
 	public String toString() {
 		return "UnidadeMedida [unidadeMedidaId=" + unidadeMedidaId + ", nome=" + nome + ", dataModificacao="
 				+ dataModificacao + ", produto=" + produto + "]";
 	}
 
-	
-
-	
 }

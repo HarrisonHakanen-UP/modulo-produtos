@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "documento")
 public class Documento implements Serializable {
-	
+
 	/**
 	 * 
 	 */
@@ -24,7 +24,7 @@ public class Documento implements Serializable {
 	@Id
 	@GeneratedValue
 	private long documentoId;
-	
+
 	private String nivelDocumento;
 	@NotNull
 	private String titulo;
@@ -42,22 +42,21 @@ public class Documento implements Serializable {
 	private int alterarNumero;
 	@NotNull
 	private int status;
-	
+
 	private String resumoDocumento;
-	
+
 	private String documento;
 	@NotNull
 	private Date dataModificacao;
-	
+
 	@ManyToOne
-    @JoinColumn
+	@JoinColumn
 	private Produto produto;
 
 	public Documento() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-		
 
 	@Override
 	public int hashCode() {
@@ -79,7 +78,6 @@ public class Documento implements Serializable {
 		result = prime * result + ((titulo == null) ? 0 : titulo.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -179,6 +177,7 @@ public class Documento implements Serializable {
 	public void setAdministrador(int administrador) {
 		this.administrador = administrador;
 	}
+
 	public boolean isPastaDocumento() {
 		return pastaDocumento;
 	}
@@ -286,6 +285,6 @@ public class Documento implements Serializable {
 				+ nomeArquivo + ", extensaoArquivo=" + extensaoArquivo + ", revisaoArquivo=" + revisaoArquivo
 				+ ", alterarNumero=" + alterarNumero + ", status=" + status + ", resumoDocumento=" + resumoDocumento
 				+ ", documento=" + documento + ", dataModificacao=" + dataModificacao + ", produto=" + produto + "]";
-	}	
-	
+	}
+
 }

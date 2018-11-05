@@ -27,54 +27,52 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/produto")
 public class ProdutoWebService {
-	
+
 	@Autowired
 	ProdutoRepository pr;
-	
-	@GetMapping 
-	@ApiOperation(value="Retorna uma lista de Produtos")
+
+	@GetMapping
+	@ApiOperation(value = "Retorna uma lista de Produtos")
 	@RequestMapping("/listar")
-	public @ResponseBody Iterable<Produto> listaProdutos() 
-	{
+	public @ResponseBody Iterable<Produto> listaProdutos() {
 		Iterable<Produto> listaProdutos = pr.findAll();
-		return listaProdutos;				
+		return listaProdutos;
 	}
-	
+
 	@PostMapping
 	@RequestMapping(value = "/cadastrarProduto", method = RequestMethod.POST)
 	public void persistirProduto(@RequestBody Produto produto) {
 		pr.save(produto);
 		System.out.println("Produto cadastrado com sucesso!");
 	}
-	
-/*	@RequestMapping("/cadastrar")
-	public void cadastraProduto(@RequestBody Produto produto) 
-	{
-		pr.save(produto);
-		System.out.println("Produto cadastrado com sucesso!");
-	}*/
-	
+
+	/*
+	 * @RequestMapping("/cadastrar") public void cadastraProduto(@RequestBody
+	 * Produto produto) { pr.save(produto);
+	 * System.out.println("Produto cadastrado com sucesso!"); }
+	 */
+
 	@GetMapping
 	@RequestMapping(value = "/{nome}", method = RequestMethod.GET)
-    public List<Produto> listaProduto(@PathVariable("nome") String nome, Model model) {
-          List<Produto> listaProdutos = pr.findByNome(nome);
-          if (listaProdutos != null) {
-                model.addAttribute("produtos", listaProdutos);
-          }
-          return listaProdutos;
-    }
-	
-/*	@PutMapping
-    @RequestMapping("/alterar/{id}")
-    public void updateProd(@PathVariable("id") long id, @RequestBody Produto produto) {
-        if(produto != null) {
-        	Produto produtoBanco = pr.findOne(id);
-        	//produtoBanco.setNome(produto.getNome());
-            pr.save(produto);  	
-        }
-      
-	}*/
-	
+	public List<Produto> listaProduto(@PathVariable("nome") String nome, Model model) {
+		List<Produto> listaProdutos = pr.findByNome(nome);
+		if (listaProdutos != null) {
+			model.addAttribute("produtos", listaProdutos);
+		}
+		return listaProdutos;
+	}
+
+	/*
+	 * @PutMapping
+	 * 
+	 * @RequestMapping("/alterar/{id}") public void updateProd(@PathVariable("id")
+	 * long id, @RequestBody Produto produto) { if(produto != null) { Produto
+	 * produtoBanco = pr.findOne(id); //produtoBanco.setNome(produto.getNome());
+	 * pr.save(produto); }
+	 * 
+	 * }
+	 */
+
 	@PutMapping("/alterar/{id}")
 	public ResponseEntity<Object> updateStudent(@RequestBody Produto produto, @PathVariable long id) {
 
@@ -82,8 +80,8 @@ public class ProdutoWebService {
 
 		if (produtoOptional == null) {
 			return ResponseEntity.notFound().build();
-		}else {
-		produto.setProdutoId(id);
+		} else {
+			produto.setProdutoId(id);
 		}
 		pr.save(produto);
 
@@ -92,9 +90,9 @@ public class ProdutoWebService {
 
 	@DeleteMapping
 	@RequestMapping("/deletar/{id}")
-    public boolean deleteProduto(@PathVariable("id") long id) {
+	public boolean deleteProduto(@PathVariable("id") long id) {
 		pr.delete(id);
 		System.out.println("Produto deletado!");
 		return true;
-    }
+	}
 }

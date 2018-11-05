@@ -8,17 +8,18 @@ import org.springframework.amqp.core.Queue;
 
 @Component
 public class OrderQueueSender {
-	
+
 	@Autowired
 	private RabbitTemplate rabbitTemplate;
-	
+
 	@Autowired
 	private Queue queue;
-	
-	/*public void send(String order) {
-		rabbitTemplate.convertAndSend(this.queue.getName(), order);
-	}*/
-	
+
+	/*
+	 * public void send(String order) {
+	 * rabbitTemplate.convertAndSend(this.queue.getName(), order); }
+	 */
+
 	public void send(String order) {
 		rabbitTemplate.convertAndSend(this.queue.getName(), order);
 	}

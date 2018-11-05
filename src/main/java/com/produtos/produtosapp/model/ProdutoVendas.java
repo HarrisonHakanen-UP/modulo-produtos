@@ -8,6 +8,8 @@ public interface ProdutoVendas {
 
 	@Value("#{target.id}")
 	long getIdProduto();
+
 	String getNome();
+
 	double getValor();
 }

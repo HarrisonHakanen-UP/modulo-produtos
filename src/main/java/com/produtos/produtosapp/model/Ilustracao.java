@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "ilustracao")
 public class Ilustracao implements Serializable {
-	
+
 	/**
 	 * 
 	 */
@@ -22,11 +22,11 @@ public class Ilustracao implements Serializable {
 	@Id
 	@GeneratedValue
 	private long ilustracaoId;
-	
+
 	private String diagrama;
 	@NotNull
 	private Date dataModificacao;
-	
+
 	public long getIlustracaoId() {
 		return ilustracaoId;
 	}
@@ -102,7 +102,4 @@ public class Ilustracao implements Serializable {
 				+ dataModificacao + "]";
 	}
 
-
-	
-	
 }

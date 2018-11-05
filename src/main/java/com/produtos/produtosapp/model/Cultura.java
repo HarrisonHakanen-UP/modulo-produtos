@@ -12,23 +12,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "cultura")
 public class Cultura implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue
 	private long culturaId;
-	
+
 	private String nome;
-	
+
 	private Date dataCadastro;
 
 	public Cultura() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 	public long getCulturaId() {
 		return culturaId;
@@ -58,7 +56,6 @@ public class Cultura implements Serializable {
 		return serialVersionUID;
 	}
 
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -68,8 +65,6 @@ public class Cultura implements Serializable {
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -95,8 +90,6 @@ public class Cultura implements Serializable {
 		return true;
 	}
 
-
-
 	public Cultura(long culturaId, String nome, Date dataCadastro) {
 		super();
 		this.culturaId = culturaId;
@@ -104,11 +97,9 @@ public class Cultura implements Serializable {
 		this.dataCadastro = dataCadastro;
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Cultura [culturaId=" + culturaId + ", nome=" + nome + ", dataCadastro=" + dataCadastro + "]";
 	}
-	
+
 }

@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "modelo")
 public class Modelo implements Serializable {
-	
+
 	/**
 	 * 
 	 */
@@ -26,42 +26,40 @@ public class Modelo implements Serializable {
 	@Id
 	@GeneratedValue
 	private long ModeloId;
-	
+
 	@NotNull
 	private String Nome;
-	
+
 	private String CatalogoDescricao;
-	
+
 	private String Instrucao;
-	
+
 	@NotNull
-	private Date dataModificacao;	
-	
-	//@OneToOne
+	private Date dataModificacao;
+
+	// @OneToOne
 	@Lob
-	@Column(length=1000000)
+	@Column(length = 1000000)
 	private Produto protuto;
-	
-	//@OneToOne(cascade = CascadeType.ALL)
+
+	// @OneToOne(cascade = CascadeType.ALL)
 	private Ilustracao ilustracoes;
-	
-	
-	//@OneToOne(cascade = CascadeType.ALL)
+
+	// @OneToOne(cascade = CascadeType.ALL)
 	private Cultura cultura;
-	
-	//@OneToOne(cascade = CascadeType.ALL)
+
+	// @OneToOne(cascade = CascadeType.ALL)
 	private Descricao descricao;
 
 	public Modelo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 	public long getModeloId() {
 		return ModeloId;
 	}
+
 	public void setModeloId(long modeloId) {
 		ModeloId = modeloId;
 	}
@@ -134,8 +132,6 @@ public class Modelo implements Serializable {
 		return serialVersionUID;
 	}
 
-
-
 	public Modelo(long modeloId, String nome, String catalogoDescricao, String instrucao, Date dataModificacao,
 			Produto protuto, Ilustracao ilustracoes, Cultura cultura, Descricao descricao) {
 		super();
@@ -150,15 +146,11 @@ public class Modelo implements Serializable {
 		this.descricao = descricao;
 	}
 
-
-	
-
 	@Override
 	public String toString() {
 		return "Modelo [ModeloId=" + ModeloId + ", Nome=" + Nome + ", CatalogoDescricao=" + CatalogoDescricao
 				+ ", Instrucao=" + Instrucao + ", dataModificacao=" + dataModificacao + ", protuto=" + protuto
 				+ ", ilustracoes=" + ilustracoes + ", cultura=" + cultura + ", descricao=" + descricao + "]";
 	}
-	
 
 }

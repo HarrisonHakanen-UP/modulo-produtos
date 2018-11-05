@@ -15,8 +15,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "fotos")
 public class Fotos implements Serializable {
-	
-	
+
 	/**
 	 * 
 	 */
@@ -25,22 +24,21 @@ public class Fotos implements Serializable {
 	@Id
 	@GeneratedValue
 	private long fotoId;
-	
+
 	private String imagemPequena;
-	
+
 	private String nomeImagemPequena;
-	
+
 	private String imagemGrande;
-	
+
 	private String nomeImagemGrande;
-	
+
 	private boolean principal;
 	@NotNull
 	private Date dataModificacao;
-	
-	@ManyToOne   
-	private Produto produto;	
-	
+
+	@ManyToOne
+	private Produto produto;
 
 	@Override
 	public int hashCode() {
@@ -167,8 +165,6 @@ public class Fotos implements Serializable {
 		this.produto = produto;
 	}
 
-
-
 	public Fotos(long fotoId, String imagemPequena, String nomeImagemPequena, String imagemGrande,
 			String nomeImagemGrande, boolean principal, Date dataModificacao, Produto produto) {
 		super();
@@ -189,5 +185,4 @@ public class Fotos implements Serializable {
 				+ ", principal=" + principal + ", dataModificacao=" + dataModificacao + ", produto=" + produto + "]";
 	}
 
-		
 }

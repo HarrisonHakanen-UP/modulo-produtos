@@ -3,7 +3,6 @@ package com.produtos.produtosapp.model;
 import java.io.Serializable;
 import java.util.Date;
 
-
 import javax.persistence.Entity;
 
 import javax.persistence.GeneratedValue;
@@ -17,77 +16,67 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "produtoSubCategoria")
-public class ProdutoSubCategoria implements Serializable{
-	
+public class ProdutoSubCategoria implements Serializable {
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue	
+	@GeneratedValue
 	private long ProdutoSubCategoriaID;
-			
+
 	@NotNull
 	private String nome;
 	@NotNull
 	private Date dataModificacao;
-	
+
 	@OneToOne
 	ProdutoCategoria produtoCategoria;
-	
+
 	@ManyToOne
-	private Produto produto;	
+	private Produto produto;
 
 	public long getProdutoSubCategoriaID() {
 		return ProdutoSubCategoriaID;
 	}
 
-
 	public void setProdutoSubCategoriaID(long produtoSubCategoriaID) {
 		ProdutoSubCategoriaID = produtoSubCategoriaID;
 	}
-
 
 	public String getNome() {
 		return nome;
 	}
 
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 
 	public Date getDataModificacao() {
 		return dataModificacao;
 	}
 
-
 	public void setDataModificacao(Date dataModificacao) {
 		this.dataModificacao = dataModificacao;
 	}
-
 
 	public ProdutoCategoria getProdutoCategoria() {
 		return produtoCategoria;
 	}
 
-
 	public void setProdutoCategoria(ProdutoCategoria produtoCategoria) {
 		this.produtoCategoria = produtoCategoria;
 	}
-
 
 	public Produto getProduto() {
 		return produto;
 	}
 
-
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -100,7 +89,6 @@ public class ProdutoSubCategoria implements Serializable{
 		result = prime * result + ((produtoCategoria == null) ? 0 : produtoCategoria.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -136,7 +124,6 @@ public class ProdutoSubCategoria implements Serializable{
 		return true;
 	}
 
-
 	public ProdutoSubCategoria(long produtoSubCategoriaID, String nome, Date dataModificacao,
 			ProdutoCategoria produtoCategoria, Produto produto) {
 		super();
@@ -147,13 +134,11 @@ public class ProdutoSubCategoria implements Serializable{
 		this.produto = produto;
 	}
 
-
 	@Override
 	public String toString() {
 		return "ProdutoSubCategoria [ProdutoSubCategoriaID=" + ProdutoSubCategoriaID + ", nome=" + nome
 				+ ", dataModificacao=" + dataModificacao + ", produtoCategoria=" + produtoCategoria + ", produto="
 				+ produto + "]";
 	}
-
 
 }

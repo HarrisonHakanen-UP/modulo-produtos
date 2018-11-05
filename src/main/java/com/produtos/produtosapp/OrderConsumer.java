@@ -10,10 +10,9 @@ import com.produtos.produtosapp.repository.ProdutoRepository;
 @Component
 public class OrderConsumer {
 
-	
-	@RabbitListener(queues = {"${queue.order.name}"})
+	@RabbitListener(queues = { "${queue.order.name}" })
 	public void receive(@Payload String fileBody) {
 		System.out.println("Mensagem recebida: " + fileBody);
 	}
-	
+
 }

@@ -9,11 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "descricao")
 public class Descricao implements Serializable {
-	
+
 	/**
 	 * 
 	 */
@@ -21,18 +20,16 @@ public class Descricao implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private long DescricaoProdutoId;	
+	private long DescricaoProdutoId;
 
 	private String Descricao;
-	
+
 	private Date dataCadastro;
 
 	public Descricao() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 	public long getDescricaoProdutoId() {
 		return DescricaoProdutoId;
@@ -62,8 +59,6 @@ public class Descricao implements Serializable {
 		return serialVersionUID;
 	}
 
-
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -73,8 +68,6 @@ public class Descricao implements Serializable {
 		result = prime * result + ((dataCadastro == null) ? 0 : dataCadastro.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -100,8 +93,6 @@ public class Descricao implements Serializable {
 		return true;
 	}
 
-
-
 	public Descricao(long descricaoProdutoId, String descricao, Date dataCadastro) {
 		super();
 		DescricaoProdutoId = descricaoProdutoId;
@@ -109,14 +100,10 @@ public class Descricao implements Serializable {
 		this.dataCadastro = dataCadastro;
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Descricao [DescricaoProdutoId=" + DescricaoProdutoId + ", Descricao=" + Descricao + ", dataCadastro="
 				+ dataCadastro + "]";
 	}
-
-	
 
 }

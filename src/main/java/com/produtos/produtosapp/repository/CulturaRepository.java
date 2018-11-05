@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.produtos.produtosapp.model.Cultura;
 
-public interface CulturaRepository extends CrudRepository<Cultura, Long>{
+public interface CulturaRepository extends CrudRepository<Cultura, Long> {
 
 }

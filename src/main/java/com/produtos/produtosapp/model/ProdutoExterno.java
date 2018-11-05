@@ -6,38 +6,46 @@ import javax.persistence.Id;
 
 @Entity
 public class ProdutoExterno {
-	
+
 	@Id
 	@GeneratedValue
 	private long id;
 	private long idProduto;
 	private String nome;
 	private double preco;
-	
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
 	public long getIdProduto() {
 		return idProduto;
 	}
+
 	public void setIdProduto(long idProduto) {
 		this.idProduto = idProduto;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public double getPreco() {
 		return preco;
 	}
+
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -50,6 +58,7 @@ public class ProdutoExterno {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -72,6 +81,7 @@ public class ProdutoExterno {
 			return false;
 		return true;
 	}
+
 	public ProdutoExterno(long id, long idProduto, String nome, double preco) {
 		super();
 		this.id = id;
@@ -79,10 +89,10 @@ public class ProdutoExterno {
 		this.nome = nome;
 		this.preco = preco;
 	}
+
 	@Override
 	public String toString() {
 		return "ProdutoExterno [id=" + id + ", idProduto=" + idProduto + ", nome=" + nome + ", preco=" + preco + "]";
 	}
-	
 
 }

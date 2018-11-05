@@ -12,19 +12,18 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class DescricaoCultura {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long DescricaoCulturaProdutoId;
-	
+
 	private Date dataCadastro;
-	
+
 	@OneToMany
 	private List<Cultura> cultura;
-	
+
 	@OneToMany
 	private List<Descricao> descricaoproduto;
-	
 
 	public long getDescricaoCulturaProdutoId() {
 		return DescricaoCulturaProdutoId;
@@ -97,7 +96,6 @@ public class DescricaoCultura {
 			return false;
 		return true;
 	}
-		
 
 	public DescricaoCultura(long descricaoCulturaProdutoId, Date dataCadastro, List<Cultura> cultura,
 			List<Descricao> descricaoproduto) {
@@ -113,7 +111,5 @@ public class DescricaoCultura {
 		return "DescricaoCultura [DescricaoCulturaProdutoId=" + DescricaoCulturaProdutoId + ", dataCadastro="
 				+ dataCadastro + ", cultura=" + cultura + ", descricaoproduto=" + descricaoproduto + "]";
 	}
-	
 
-	
 }
